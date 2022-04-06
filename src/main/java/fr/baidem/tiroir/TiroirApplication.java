@@ -9,11 +9,11 @@ import org.springframework.context.event.EventListener;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.entity.Season;
+import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.entity.Style;
 import fr.baidem.tiroir.entity.Tiroir;
-
+import fr.baidem.tiroir.repository.SockRepository;
 import fr.baidem.tiroir.service.DrawerService;
-import fr.baidem.tiroir.service.SockService;
 import fr.baidem.tiroir.service.TiroirService;
 import fr.baidem.tiroir.service.dto.CreateDrawerDTO;
 import fr.baidem.tiroir.service.dto.CreateSockDTO;
@@ -29,7 +29,7 @@ public class TiroirApplication {
 	private DrawerService drawerService;
 
 	@Autowired
-	private SockService sockService;
+	private SockRepository sockRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TiroirApplication.class, args);
@@ -71,9 +71,18 @@ public class TiroirApplication {
 		}
 		
 		CreateSockDTO dto = new CreateSockDTO("test brand", "test color", 42, Style.SPORT_SHORT, Season.SUMMER);
+
+//		CreateSockDTO dto = new CreateSockDTO("test brand", "test color", 42);
 		System.out.println(dto.toString());
-		this.sockService.create(dto);
-		System.out.println(drawers.size() + " test sock create");
+		
+		Sock sock = new Sock(dto.getBrand(), dto.getColor(), dto.getSize()
+//				, dto.getStyle(), dto.getSeason()
+				);
+		sockRepository.save(sock);
+		
+		
+//		this.sockService.create(dto);
+//		System.out.println(drawers.size() + " test sock create");
 
 
 		

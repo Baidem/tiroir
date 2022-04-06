@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.repository.SockRepository;
 import fr.baidem.tiroir.service.dto.CreateSockDTO;
-import fr.baidem.tiroir.service.dto.SockDTO;
 
 @Service
 public class SockService {
@@ -53,24 +52,11 @@ public class SockService {
 		return sockRepository.findBySeason(season);
 	}
 	
-	public SockDTO createWithEnum(CreateSockDTO creationdto) {
-		Sock sock = new Sock(creationdto.getBrand(), creationdto.getColor(), creationdto.getSize(), creationdto.getStyle(), creationdto.getSeason());
-		
-		sock = this.sockRepository.save(sock);
-		
-		SockDTO dto = new SockDTO(sock.getId(),sock.getBrand(), sock.getColor(), sock.getSize(), sock.getStyle(), sock.getSeason());
-		
-		return dto;
+	public void create(CreateSockDTO dto) {
+		Sock sock = new Sock(dto.getBrand(), dto.getColor(), dto.getSize(), dto.getStyle(), dto.getSeason());
+		sockRepository.save(sock);
 	}
 	
-	public SockDTO create(CreateSockDTO creationdto) {
-		Sock sock = new Sock(creationdto.getBrand(), creationdto.getColor(), creationdto.getSize());
-		
-		sock = this.sockRepository.save(sock);
-		
-		SockDTO dto = new SockDTO(sock.getId(),sock.getBrand(), sock.getColor(), sock.getSize());
-		
-		return dto;
-	}
+
 
 }

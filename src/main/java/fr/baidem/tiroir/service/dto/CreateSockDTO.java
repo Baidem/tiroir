@@ -15,23 +15,18 @@ public class CreateSockDTO {
 
     private Season season;
 
-	public CreateSockDTO(String brand, String color, int size, Style style, Season season) {
-		this.brand = brand;
-		this.color = color;
-		this.size = size;
-		this.style = style;
-		this.season = season;
-	}
 	
-	
-
 	public CreateSockDTO(String brand, String color, int size) {
 		this.brand = brand;
 		this.color = color;
 		this.size = size;
 	}
-
-
+	
+	public CreateSockDTO(String brand, String color, int size, Style style, Season season) {
+		this(brand, color, size);
+		this.style = style;
+		this.season = season;
+	}
 
 	public String getBrand() {
 		return brand;

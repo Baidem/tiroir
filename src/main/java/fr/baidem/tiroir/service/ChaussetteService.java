@@ -38,14 +38,9 @@ public class ChaussetteService {
 		return chaussetteRepository.findBySeason(season);
 	}
 	
-	public ChaussetteDTO create(CreateChaussetteDTO creationdto) {
-		Chaussette chaussette = new Chaussette(creationdto.getColor(),creationdto.getSeason());
-		
-		chaussette = this.chaussetteRepository.save(chaussette);
-		
-		ChaussetteDTO dto = new ChaussetteDTO(chaussette.getId(),chaussette.getColor(), chaussette.getSeason());
-		
-		return dto;
+	public void create(CreateChaussetteDTO dto) {
+		Chaussette chaussette = new Chaussette(dto.getColor(),dto.getSeason());
+		chaussetteRepository.save(chaussette);
 	}
 	
 	
