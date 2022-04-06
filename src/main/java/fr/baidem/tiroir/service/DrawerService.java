@@ -27,8 +27,8 @@ public class DrawerService {
 	}
 	
 	@Transactional
-	public Drawer findByName(String name) {
-		return drawerRepository.findByNameContainingIgnoreCase(name);
+	public List<Drawer> findByName(String name) {
+		return drawerRepository.findByName(name);
 	}
 
 	public void create(CreateDrawerDTO dto) {

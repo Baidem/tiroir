@@ -8,17 +8,30 @@ public class CreateSockDTO {
 	private String brand;
 	
     private String color;
+    
+    private int size;
 
     private Style style;
 
     private Season season;
 
-	public CreateSockDTO(String brand, String color, Style style, Season season) {
+	public CreateSockDTO(String brand, String color, int size, Style style, Season season) {
 		this.brand = brand;
 		this.color = color;
+		this.size = size;
 		this.style = style;
 		this.season = season;
 	}
+	
+	
+
+	public CreateSockDTO(String brand, String color, int size) {
+		this.brand = brand;
+		this.color = color;
+		this.size = size;
+	}
+
+
 
 	public String getBrand() {
 		return brand;
@@ -34,6 +47,10 @@ public class CreateSockDTO {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
 	}
 
 	public Style getStyle() {
@@ -52,6 +69,17 @@ public class CreateSockDTO {
 		this.season = season;
 	}
 
-    
+	public int getSize() {
+		return size;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "CreateSockDTO [brand=" + brand + ", color=" + color + ", size=" + size + ", style=" + style
+				+ ", season=" + season + "]";
+	}
+	
 	
 }

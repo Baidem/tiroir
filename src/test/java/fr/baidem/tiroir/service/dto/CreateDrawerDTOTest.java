@@ -1,0 +1,36 @@
+package fr.baidem.tiroir.service.dto;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import fr.baidem.tiroir.entity.Drawer;
+import fr.baidem.tiroir.service.DrawerService;
+
+@SpringBootTest
+class CreateDrawerDTOTest {
+	
+	@Autowired
+	private DrawerService drawerService;
+
+	@Test
+	void testCreateDrawerDTO() {
+		
+		CreateDrawerDTO dto = new CreateDrawerDTO("Drawer de test");
+		drawerService.create(dto);
+		List<Drawer> drawers = drawerService.findByName("Drawer de test");
+		boolean isFound = false;
+		for (Drawer drawer : drawers) {
+			if (drawer.getName().equals("Drawer de test")) {
+				isFound = true;
+			}
+
+		}
+		assertTrue(isFound);
+	}
+
+}

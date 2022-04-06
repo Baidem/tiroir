@@ -38,15 +38,19 @@ public class Sock {
     public Sock() {
 
     }
-
-	public Sock(String brand, String color, int size, Style style, Season season) {
+    
+    public Sock(String brand, String color, int size) {
 		this.brand = brand;
 		this.color = color;
 		this.size = size;
+	}
+
+	public Sock(String brand, String color, int size, Style style, Season season) {
+		this(brand, color, size);
 		this.style = style;
 		this.season = season;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
