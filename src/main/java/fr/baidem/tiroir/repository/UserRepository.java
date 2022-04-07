@@ -11,8 +11,8 @@ import fr.baidem.tiroir.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
-//	List<User> findById(String id);
-//
-//	List<User> findByName(String name);	
+	List<User> findById(String id);
+
+	List<User> findByUserName(String userName);	
 		
 }
