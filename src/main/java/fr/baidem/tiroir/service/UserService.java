@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.User;
 import fr.baidem.tiroir.repository.UserRepository;
+import fr.baidem.tiroir.service.dto.user.CreateUserDTO;
 
 @Service
 public class UserService {
@@ -31,9 +32,9 @@ public class UserService {
 		return userRepository.findByUserName(name);
 	}
 
-//	public void create(CreateUserDTO dto) {
-//		User user = new User(dto.getName());
-//		userRepository.save(user);
-//	}
+	public void create(CreateUserDTO dto) {
+		User user = new User(dto.getUserName());
+		userRepository.save(user);
+	}
 	
 }

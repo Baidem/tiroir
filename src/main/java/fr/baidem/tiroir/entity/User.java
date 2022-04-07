@@ -28,6 +28,10 @@ public class User {
 
 	public User() {
 	}
+	
+	public User(String userName) {
+		this.userName = userName;
+	}
 
 	public User(String userName, String password) {
 		this.userName = userName;
