@@ -1,4 +1,4 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.drawer;
 
 public class CreateDrawerDTO {
 	

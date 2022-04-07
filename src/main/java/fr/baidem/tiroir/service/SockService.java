@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.repository.SockRepository;
-import fr.baidem.tiroir.service.dto.CreateSockDTO;
+import fr.baidem.tiroir.service.dto.sock.CreateSockDTO;
 
 @Service
 public class SockService {

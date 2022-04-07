@@ -14,8 +14,8 @@ import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.entity.Style;
 import fr.baidem.tiroir.service.DrawerService;
 import fr.baidem.tiroir.service.SockService;
-import fr.baidem.tiroir.service.dto.CreateDrawerDTO;
-import fr.baidem.tiroir.service.dto.CreateSockDTO;
+import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
+import fr.baidem.tiroir.service.dto.sock.CreateSockDTO;
 
 @SpringBootApplication
 public class TiroirApplication {

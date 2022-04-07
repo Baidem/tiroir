@@ -12,6 +12,7 @@ import fr.baidem.tiroir.entity.Season;
 import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.entity.Style;
 import fr.baidem.tiroir.service.SockService;
+import fr.baidem.tiroir.service.dto.sock.CreateSockDTO;
 
 @SpringBootTest
 class CreateSockDTOTest {

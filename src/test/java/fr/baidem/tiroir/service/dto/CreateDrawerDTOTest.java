@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.service.DrawerService;
+import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
 
 @SpringBootTest
 class CreateDrawerDTOTest {
