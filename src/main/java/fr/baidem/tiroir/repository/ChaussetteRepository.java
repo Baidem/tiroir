@@ -18,6 +18,7 @@ public interface ChaussetteRepository extends JpaRepository<Chaussette, UUID> {
 	
 	List<Chaussette> findBySeason(String season);
 
+	List<Chaussette> findByDrawer(String drawer);
 	
 	
 	

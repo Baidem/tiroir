@@ -28,11 +28,11 @@ public class ChaussetteController {
 		return socks;
 	}
 	
-	@PostMapping
-	public ChaussetteDTO create(CreateChaussetteDTO creationDTO) {
-		ChaussetteDTO created = chaussetteService.create(creationDTO);
-		return created;
-	}
+//	@PostMapping
+//	public ChaussetteDTO create(CreateChaussetteDTO creationDTO) {
+//		ChaussetteDTO created = chaussetteService.create(creationDTO);
+//		return created;
+//	}
 
 	@GetMapping("{id}")
 	public Chaussette getSockById(@PathVariable String id) {

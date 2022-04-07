@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.Chaussette;
 import fr.baidem.tiroir.repository.ChaussetteRepository;
-import fr.baidem.tiroir.service.dto.ChaussetteDTO;
 import fr.baidem.tiroir.service.dto.CreateChaussetteDTO;
 
 @Service
@@ -38,14 +37,9 @@ public class ChaussetteService {
 		return chaussetteRepository.findBySeason(season);
 	}
 	
-	public ChaussetteDTO create(CreateChaussetteDTO creationdto) {
-		Chaussette chaussette = new Chaussette(creationdto.getColor(),creationdto.getSeason());
-		
-		chaussette = this.chaussetteRepository.save(chaussette);
-		
-		ChaussetteDTO dto = new ChaussetteDTO(chaussette.getId(),chaussette.getColor(), chaussette.getSeason());
-		
-		return dto;
+	public void create(CreateChaussetteDTO dto) {
+		Chaussette chaussette = new Chaussette(dto.getColor(),dto.getSeason());
+		chaussetteRepository.save(chaussette);
 	}
 	
 	
