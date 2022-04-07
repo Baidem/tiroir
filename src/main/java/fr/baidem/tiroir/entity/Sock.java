@@ -31,7 +31,7 @@ public class Sock {
     private Season season;
     
     @ManyToOne
-    @JoinColumn(name="drawer_id", nullable=false)
+    @JoinColumn(name="drawer_id")
     private Drawer drawer;
 
     

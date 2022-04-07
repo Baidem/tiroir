@@ -29,7 +29,6 @@ public class Chaussette {
 	
 	@JoinColumn(name = "tiroir_id")
 	@ManyToOne(fetch = FetchType.LAZY)
-	@NonNull
 	private Tiroir drawer;
 
 	public Chaussette() {
@@ -39,6 +38,11 @@ public class Chaussette {
 	public Chaussette(String color, String season) {
 		this.color = color;
 		this.season = season;
+	}
+
+	public Chaussette(String color, String season, Tiroir drawer) {
+		this(color, season);
+		this.drawer = drawer;
 	}
 
 	public UUID getId() {
@@ -51,6 +55,14 @@ public class Chaussette {
 
 	public String getSeason() {
 		return season;
+	}
+
+	public Tiroir getDrawer() {
+		return drawer;
+	}
+
+	public void setDrawer(Tiroir drawer) {
+		this.drawer = drawer;
 	}
 
 		

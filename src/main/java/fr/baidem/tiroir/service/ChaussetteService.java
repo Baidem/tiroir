@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.Chaussette;
 import fr.baidem.tiroir.repository.ChaussetteRepository;
-import fr.baidem.tiroir.service.dto.ChaussetteDTO;
 import fr.baidem.tiroir.service.dto.CreateChaussetteDTO;
 
 @Service
