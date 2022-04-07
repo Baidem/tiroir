@@ -1,7 +1,6 @@
 package fr.baidem.tiroir;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -85,7 +84,7 @@ public class TiroirApplication {
 		List<Drawer> drawers = drawerService.findAll();
 		List<Sock> socks = sockService.findAll();
 
-		System.out.println(drawers.size() + " some drawer find");
+		System.out.println(drawers.size() + " drawer find");
 
 		if (drawers.size() == 0) {
 			CreateDrawerDTO dto = new CreateDrawerDTO("top drawer");
@@ -97,10 +96,10 @@ public class TiroirApplication {
 			drawers = drawerService.findAll();
 			 for (Drawer drawer : drawers) {
 				if (drawer.getName().equals("top drawer")) {
-					System.out.println(tiroirs.size() + " some drawer find," + " top drawer created");
+					System.out.println(tiroirs.size() + " drawer(s) find," + " top drawer created");
 				}
 				if (drawer.getName().equals("bottom drawer")) {
-					System.out.println(tiroirs.size() + " some drawer find," + " bottom drawer created");
+					System.out.println(tiroirs.size() + " drawer(s) find," + " bottom drawer created");
 				}
 			}
 			

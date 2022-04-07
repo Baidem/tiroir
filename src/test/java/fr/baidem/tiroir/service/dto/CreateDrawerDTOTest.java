@@ -20,15 +20,14 @@ class CreateDrawerDTOTest {
 	@Test
 	void testCreateDrawerDTO() {
 		
-		CreateDrawerDTO dto = new CreateDrawerDTO("Drawer de test");
+		CreateDrawerDTO dto = new CreateDrawerDTO("Drawer test");
 		drawerService.create(dto);
-		List<Drawer> drawers = drawerService.findByName("Drawer de test");
+		List<Drawer> drawers = drawerService.findByName("Drawer test");
 		boolean isFound = false;
 		for (Drawer drawer : drawers) {
-			if (drawer.getName().equals("Drawer de test")) {
+			if (drawer.getName().equals("Drawer test")) {
 				isFound = true;
 			}
-
 		}
 		assertTrue(isFound);
 	}

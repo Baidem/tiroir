@@ -25,17 +25,17 @@ class CreateSockDTOTest {
 		sockService.create(dto);
 		List<Sock> socks = sockService.findByBrand("test brand");
 		boolean brandIsFound = false;
+		boolean colorIsFound = false;
+
 		for (Sock sock : socks) {
 			if (sock.getBrand().equals("test brand")) {
 				brandIsFound = true;
 			}
-		}
-		boolean colorIsFound = false;
-		for (Sock sock : socks) {
 			if (sock.getColor().equals("test color")) {
 				colorIsFound = true;
 			}
 		}
+		
 		assertTrue(brandIsFound, "brand is not found");
 		assertTrue(colorIsFound, "color is not found");
 		
