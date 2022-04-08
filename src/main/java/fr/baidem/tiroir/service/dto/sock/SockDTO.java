@@ -1,9 +1,11 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.sock;
 
 import fr.baidem.tiroir.entity.Season;
 import fr.baidem.tiroir.entity.Style;
 
-public class CreateSockDTO {
+public class SockDTO {
+
+	private Long id;
 	
 	private String brand;
 	
@@ -15,17 +17,25 @@ public class CreateSockDTO {
 
     private Season season;
 
-	
-	public CreateSockDTO(String brand, String color, int size) {
+	public SockDTO(Long id, String brand, String color, int size) {
+		this.id = id;
 		this.brand = brand;
 		this.color = color;
 		this.size = size;
 	}
 	
-	public CreateSockDTO(String brand, String color, int size, Style style, Season season) {
-		this(brand, color, size);
+	public SockDTO(Long id, String brand, String color, int size, Style style, Season season) {
+		this(id, brand, color, size);
 		this.style = style;
 		this.season = season;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getBrand() {
@@ -42,6 +52,10 @@ public class CreateSockDTO {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public int getSize() {
+		return size;
 	}
 
 	public void setSize(int size) {
@@ -63,18 +77,4 @@ public class CreateSockDTO {
 	public void setSeason(Season season) {
 		this.season = season;
 	}
-
-	public int getSize() {
-		return size;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "CreateSockDTO [brand=" + brand + ", color=" + color + ", size=" + size + ", style=" + style
-				+ ", season=" + season + "]";
-	}
-	
-	
 }

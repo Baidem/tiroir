@@ -1,23 +1,22 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.drawer;
 
-import java.util.UUID;
 
-public class TiroirDTO {
+public class DrawerDTO {
 	
-	private UUID id;
+	private Long id;
 
 	private String name;
 
-	public TiroirDTO(UUID id, String name) {
+	public DrawerDTO(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -29,7 +28,6 @@ public class TiroirDTO {
 		this.name = name;
 	}
 
+    
 	
-	
-
 }

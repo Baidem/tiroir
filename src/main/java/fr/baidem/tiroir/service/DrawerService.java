@@ -9,10 +9,11 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.repository.DrawerRepository;
-import fr.baidem.tiroir.service.dto.CreateDrawerDTO;
+import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
 
 @Service
 public class DrawerService {
+	
 	@Autowired
 	private DrawerRepository drawerRepository;
 	
