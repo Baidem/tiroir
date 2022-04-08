@@ -75,6 +75,14 @@ public class Sock {
 		return season;
 	}
 
+	public Drawer getDrawer() {
+		return drawer;
+	}
+
+	public void setDrawer(Drawer drawer) {
+		this.drawer = drawer;
+	}
+
     
     
     

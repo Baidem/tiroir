@@ -12,6 +12,7 @@ import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.entity.Season;
 import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.entity.Style;
+import fr.baidem.tiroir.repository.SockRepository;
 import fr.baidem.tiroir.service.DrawerService;
 import fr.baidem.tiroir.service.SockService;
 import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
@@ -25,6 +26,9 @@ public class TiroirApplication {
 
 	@Autowired
 	private SockService sockService;
+	
+	@Autowired
+	private SockRepository sockRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TiroirApplication.class, args);
@@ -36,6 +40,8 @@ public class TiroirApplication {
 
 		List<Drawer> drawers = drawerService.findAll();
 		List<Sock> socks = sockService.findAll();
+		Drawer topDrawer = null;
+		
 
 		System.out.println(drawers.size() + " drawer find");
 
@@ -50,6 +56,7 @@ public class TiroirApplication {
 			for (Drawer drawer : drawers) {
 				if (drawer.getName().equals("top drawer")) {
 					System.out.println(drawers.size() + " drawer(s) find," + " top drawer created");
+					topDrawer = drawer;
 				}
 				if (drawer.getName().equals("bottom drawer")) {
 					System.out.println(drawers.size() + " drawer(s) find," + " bottom drawer created");
@@ -63,6 +70,9 @@ public class TiroirApplication {
 			for (Sock sock : socks) {
 				if (sock.getBrand().equals("sosocks")) {
 					System.out.println(socks.size() + " some sock find," + " red sosocks created");
+					sock.setDrawer(topDrawer);
+					this.sockRepository.save(sock);
+
 				}
 			}
 		}
