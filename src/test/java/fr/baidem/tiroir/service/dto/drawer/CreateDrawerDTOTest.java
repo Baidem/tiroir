@@ -1,4 +1,4 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.drawer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.service.DrawerService;
-import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
 
 @SpringBootTest
 class CreateDrawerDTOTest {
