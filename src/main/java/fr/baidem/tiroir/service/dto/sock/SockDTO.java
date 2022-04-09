@@ -16,6 +16,10 @@ public class SockDTO {
     private Style style;
 
     private Season season;
+    
+
+	public SockDTO() {
+	}
 
 	public SockDTO(Long id, String brand, String color, int size) {
 		this.id = id;
