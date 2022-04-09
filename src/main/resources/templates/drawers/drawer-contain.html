@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contents of the drawer</title>
+<link href="/styles/drawer.css" rel="stylesheet">
+</head>
+<body>
+	<a href="/drawer-contain"><button>Return</button></a>
+	<h1>
+		Contents of the drawer <span th:text="${item.name}"></span>
+	</h1>
+
+	<div>
+		ID : <span th:text="${drawer.id}"></span>
+	</div>
+	<div>
+		Name : <span th:text="${drawer.name}"></span>
+	</div>
+	<div>
+		Content : <span th:text="${drawer.socks}"></span>
+	</div>
+</body>
+</html>
