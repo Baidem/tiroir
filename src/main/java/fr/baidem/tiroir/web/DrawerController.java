@@ -18,9 +18,9 @@ public class DrawerController {
 	private DrawerService drawerService;
 	 
 	@GetMapping
-	public List<Drawer> getBooks() {
-		List<Drawer> books = drawerService.findAll();
-		return books;
+	public List<Drawer> getDrawers() {
+		List<Drawer> drawers = drawerService.findAll();
+		return drawers;
 	}
 	
 	@PostMapping
@@ -28,6 +28,7 @@ public class DrawerController {
 		DrawerDTO created = drawerService.createDTO(creationDTO);
 		return created;
 	}
+	
 	@GetMapping("{id}")
 	public Drawer getDrawerById(@PathVariable String id) {
 		Drawer drawer = (Drawer) drawerService.findById(id);
