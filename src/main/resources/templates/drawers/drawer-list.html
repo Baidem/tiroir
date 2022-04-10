@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Drawer Listing</title>
-    <link href="/styles/drawer.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
 </head>
 <body>
 <div>
-    <a href="/">
-        <button type="button">Return</button>
-    </a>
-    <a href="/create-drawer">
-        <button type="button">Create a drawer</button>
-    </a>
+    <h1>Drawer Listing</h1>
+</div>
+<div>
+<a href="/">index</a>
+<a href="/create-drawer">create-drawer</a>
+<a href="/drawer-content">drawer-content</a>
+<a href="/drawer-list">drawer-list</a>
 </div>
 
 <div id="container-drawers">
     <div class="drawer" th:each="drawer : ${drawers}">
         <a th:href="'drawer-content/' + ${drawer.id}">
             <div th:text="${drawer.name}">
-                I display the name of the drawer
+                J'affiche le nom du titoir
             </div>
         </a>
     </div>
 </div>
+
 </body>
 </html>

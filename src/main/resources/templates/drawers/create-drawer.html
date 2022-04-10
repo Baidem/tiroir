@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Drawer Creation</title>
-    <link href="/styles/drawer.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet">
 </head>
 <body>
-<a href="drawer-list"><button>Return</button></a>
-<h1>Drawer creation</h1>
-
-<form method="post" action="create-drawer">
-    <label>Drawer name</label>
-    <input th:value="${form.name}" required placeholder="Please enter a name" name="name">
-    <br>
-    
-
-    <button type="submit">Create</button>
-</form>
+<div>
+    <h1>Drawer Creation</h1>
+</div>
+<div>
+<a href="/">index</a>
+<a href="/create-drawer">create-drawer</a>
+<a href="/drawer-content">drawer-content</a>
+<a href="/drawer-list">drawer-list</a>
+</div>
 </body>
 </html>
