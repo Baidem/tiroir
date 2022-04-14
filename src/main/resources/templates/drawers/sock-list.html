@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The list of socks</title>
+<link href="/styles/style.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<h1>The list of socks</h1>
+	</div>
+	<nav>
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="/drawer-list">drawer-list</a></li>
+			<li><a href="/sock-list">sock-list</a></li>
+			<li><a href="/create-drawer">create-drawer</a></li>
+		</ul>
+	</nav>
+
+	<div id="container-socks">
+		<div class="sock" th:each="sock : ${socks}">
+			<div th:text="${sock.brand}">I display the brand</div>
+			<div th:text="${sock.color}">I display the color</div>
+			<div th:text="${sock.drawer.name}">I display the drawer name</div>
+		</div>
+	</div>
+
+</body>
+</html>
