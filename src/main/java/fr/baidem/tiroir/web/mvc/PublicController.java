@@ -37,6 +37,10 @@ public class PublicController {
 		return new ModelAndView("drawers/create-drawer");
 	}
 	
+	@GetMapping("/sock-list")
+	public ModelAndView socksList() {
+		return new ModelAndView("drawers/sock-list");
+	}
 	
 	
 }
