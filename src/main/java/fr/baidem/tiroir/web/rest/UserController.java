@@ -1,4 +1,4 @@
-package fr.baidem.tiroir.web;
+package fr.baidem.tiroir.web.rest;
 
 import java.util.List;
 
