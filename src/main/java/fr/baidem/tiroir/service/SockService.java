@@ -19,6 +19,8 @@ public class SockService {
 	@Autowired
 	private SockRepository sockRepository;
 	
+	
+	
 	@Transactional
 	public List<Sock> findAll() {
 		return sockRepository.findAll();
@@ -63,7 +65,6 @@ public class SockService {
 	@Transactional
 	public SockDTO createDTO(CreateSockDTO creationDTO) {
 		Sock sock = new Sock(creationDTO.getBrand(), creationDTO.getColor(), creationDTO.getSize(), creationDTO.getStyle(), creationDTO.getSeason());
-		sockRepository.save(sock);
 		
 		SockDTO dto = new SockDTO();
 
