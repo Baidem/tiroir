@@ -1,3 +1,38 @@
+body {
+	background-color: #181818;
+	color: yellowgreen;
+	font-family: sans-serif;
+}
+
+h1 {
+	margin: 1rem;
+}
+
+
+nav ul {
+	display: flex;
+    list-style: none;
+}
+
+nav {
+    background-color: #3f3f3f;
+    padding: .1rem;
+	
+}
+
+a {
+	color: yellowgreen;
+    text-decoration: none;
+    padding: .5rem;
+}
+
+a:active {
+		color: yellow;
+	
+}
+
+
+
 #container-drawers {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -7,5 +42,5 @@
 
 .drawer {
     padding: 10px;
-    border: 1px solid deeppink;
+    border: 1px solid #3f3f3f;
 }
