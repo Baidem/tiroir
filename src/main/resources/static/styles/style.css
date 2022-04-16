@@ -8,7 +8,6 @@ h1 {
 	margin: 1rem;
 }
 
-
 nav ul {
 	display: flex;
     list-style: none;
@@ -17,30 +16,40 @@ nav ul {
 nav {
     background-color: #3f3f3f;
     padding: .1rem;
-	
+    margin-bottom: .8rem
+}
+
+nav a {
+	padding: .5rem;
 }
 
 a {
 	color: yellowgreen;
     text-decoration: none;
-    padding: .5rem;
 }
 
 a:active {
-		color: yellow;
-	
+	color: yellow;
 }
 
-
-
-#container-drawers {
+.container-drawers, .container-socks {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    grid-gap: .8rem;
+    grid-auto-rows: minmax(100px, auto); 
 }
 
-.drawer {
-    padding: 10px;
-    border: 1px solid #3f3f3f;
+.drawer, .sock {
+    padding: .5rem;
+    border: 1px solid yellowgreen;
+    background-color: #3f3f3f; 
 }
+
+
+
+
+
+
+
+
+

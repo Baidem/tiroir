@@ -43,15 +43,11 @@ public class PublicController {
 	
 	@GetMapping("/sock-list")
 	public ModelAndView sockList() {
-		//
 		ModelAndView mAV = new ModelAndView("drawers/sock-list");
 		
         mAV.addObject("socks", sockService.findAll());
 
         return mAV;
-		//
-		
-		//return new ModelAndView("drawers/sock-list");
 	}
 	
 	
