@@ -19,13 +19,18 @@
 	</nav>
 
 
-<div id="container-socks">
-		<div class="sock" th:each="sock : ${socks}">
-			<div th:text="${sock.brand}">I display the brand</div>
-			<div th:text="${sock.color}">I display the color</div>
+<div class="container-socks">
+	<div class="sock" th:each="sock : ${socks}">
+		<div th:text="${sock.brand}">I display the brand</div>
+		<div th:text="${sock.color}">I display the color</div>
+		<div th:text="${sock.size}">I display the color</div>
+		<div th:text="${sock.style}">I display the color</div>
+		<div th:text="${sock.season}">I display the color</div>
+		<a th:href="'drawer-content/' + ${sock.drawer.id}">
 			<div th:text="${sock.drawer.name}">I display the drawer name</div>
-		</div>
+		</a>
 	</div>
+</div>
  
 	
 
