@@ -1,14 +1,14 @@
 package fr.baidem.tiroir.entity;
 
-import java.util.List;
-
+import java.util.Set;
 
 import javax.persistence.*;
 
 
-//import org.springframework.lang.NonNull;
 
 @Entity
+@Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
 	@Id
@@ -22,21 +22,15 @@ public class User {
 	@Column(name = "password", length = 50)
 	private String password;
 
-	@Column(name = "first_name", length = 100)
-	private String firstName;
-
-	@Column(name = "last_name", length = 100)
-	private String lastName;
-
-	@ManyToMany(fetch = FetchType.LAZY)
-	private List<Role> roles;
-	
-//	@JoinColumn(name = "drawer_id")
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@NonNull
-//	private Drawer drawer;
+	@Column(name = "drawers")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="user")
+    private Set<Drawer> drawers;
 
 	public User() {
+	}
+	
+	public User(String userName) {
+		this.userName = userName;
 	}
 
 	public User(String userName, String password) {
@@ -56,15 +50,4 @@ public class User {
 		return password;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}	
 }

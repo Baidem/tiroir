@@ -1,10 +1,10 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.drawer;
 
-public class CreateTiroir {
+public class CreateDrawerDTO {
 	
 	private String name;
 
-	public CreateTiroir(String name) {
+	public CreateDrawerDTO(String name) {
 		this.name = name;
 	}
 
@@ -15,7 +15,5 @@ public class CreateTiroir {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
 }

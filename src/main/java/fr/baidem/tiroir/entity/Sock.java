@@ -30,8 +30,8 @@ public class Sock {
     @Enumerated(EnumType.STRING)
     private Season season;
     
-    @ManyToOne
     @JoinColumn(name="drawer_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Drawer drawer;
 
     
@@ -73,6 +73,14 @@ public class Sock {
 
 	public Season getSeason() {
 		return season;
+	}
+
+	public Drawer getDrawer() {
+		return drawer;
+	}
+
+	public void setDrawer(Drawer drawer) {
+		this.drawer = drawer;
 	}
 
     

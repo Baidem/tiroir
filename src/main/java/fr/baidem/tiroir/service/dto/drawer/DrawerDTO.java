@@ -1,4 +1,4 @@
-package fr.baidem.tiroir.service.dto;
+package fr.baidem.tiroir.service.dto.drawer;
 
 
 public class DrawerDTO {
@@ -6,6 +6,11 @@ public class DrawerDTO {
 	private Long id;
 
 	private String name;
+	
+
+	public DrawerDTO() {
+		super();
+	}
 
 	public DrawerDTO(Long id, String name) {
 		this.id = id;

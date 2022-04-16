@@ -6,9 +6,8 @@ import java.util.Set;
 import javax.persistence.*;
 
 
-
 @Entity
-@Table(name = "drawer")
+@Table(name = "drawers")
 public class Drawer {
 
 	@Id
@@ -19,8 +18,12 @@ public class Drawer {
 	@Column(name = "name", length = 100)
 	private String name;
 
-	@OneToMany(mappedBy="drawer")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="drawer")
     private Set<Sock> socks;
+	
+	@JoinColumn(name = "user_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	private User user;
 		
 	public Drawer() {
 
@@ -43,9 +46,6 @@ public class Drawer {
 	}
 
 	
-
-	
-
 		
 		
 }
