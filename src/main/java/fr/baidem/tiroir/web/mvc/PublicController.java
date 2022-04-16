@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.baidem.tiroir.service.DrawerService;
+import fr.baidem.tiroir.service.SockService;
 
 @Controller
 public class PublicController {
@@ -13,6 +14,9 @@ public class PublicController {
 	@Autowired
 	private DrawerService drawerService;
 	
+	@Autowired
+	private SockService sockService;
+
 	@GetMapping("/")
 	public ModelAndView index( ) {
 		return new ModelAndView("index");
@@ -38,8 +42,16 @@ public class PublicController {
 	}
 	
 	@GetMapping("/sock-list")
-	public ModelAndView socksList() {
-		return new ModelAndView("drawers/sock-list");
+	public ModelAndView sockList() {
+		//
+		ModelAndView mAV = new ModelAndView("drawers/sock-list");
+		
+        mAV.addObject("socks", sockService.findAll());
+
+        return mAV;
+		//
+		
+		//return new ModelAndView("drawers/sock-list");
 	}
 	
 	
