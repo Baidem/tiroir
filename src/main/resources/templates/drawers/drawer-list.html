@@ -18,12 +18,10 @@
 		</ul>
 	</nav>
 
-<div id="container-drawers">
+<div class="container-drawers">
     <div class="drawer" th:each="drawer : ${drawers}">
         <a th:href="'drawer-content/' + ${drawer.id}">
-            <div th:text="${drawer.name}">
-                J'affiche le nom du titoir
-            </div>
+            <div th:text="${drawer.name}">I display the drawer name</div>
         </a>
     </div>
 </div>
