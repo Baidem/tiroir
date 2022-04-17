@@ -10,6 +10,6 @@ public interface DrawerRepository extends JpaRepository<Drawer, Long>{
 	
 	List<Drawer> findById(String id);
 
-	List<Drawer> findByName(String name);	
-
+	List<Drawer> findByName(String name);
+	
 }

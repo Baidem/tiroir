@@ -30,8 +30,8 @@ public class SockController {
 	}
 	
 	@GetMapping("{id}")
-	public Sock getSockById(@PathVariable String id) {
-		Sock sock = (Sock) sockService.findById(id);
+	public Sock getSockById(@PathVariable Long id) {
+		Sock sock = sockService.findById(id);
 		return sock;
 	}
 

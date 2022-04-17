@@ -140,6 +140,15 @@ public class TiroirApplication {
 					System.out.println("red dim created in the bottom drawer");
 				}
 			}
+			
+			drawerService.findById(1);
+			
+			
+			List<Sock> sockettes = sockService.findByDrawer(topDrawer);
+			for (Sock sock : sockettes) {
+				System.out.println(sock);
+				System.out.println(sock.getDrawer().getId());
+			}
 		}
 	}
 
