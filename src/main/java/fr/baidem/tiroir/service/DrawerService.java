@@ -7,8 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.events.Event.ID;
-
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.repository.DrawerRepository;
 import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
