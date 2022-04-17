@@ -31,9 +31,19 @@ public class PublicController {
         return mAV;
 	}
 	
-	@GetMapping("/drawer-content")
-	public ModelAndView drawerContent( ) {
-		return new ModelAndView("drawers/drawer-content");
+	@GetMapping("/drawer-content/{id}")
+	//public ModelAndView drawerContent( ) {
+		//
+	public ModelAndView showDrawer(@PathVariable Long id) {
+		ModelAndView mAV = new ModelAndView("drawers/drawer-content");
+
+		mAV.addObject("drawer", drawerService.findById(id));
+
+		return mAV;
+		
+		
+		//
+		//return new ModelAndView("drawers/drawer-content");
 	}
 	
 	@GetMapping("/create-drawer")

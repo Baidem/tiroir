@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.repository.DrawerRepository;
+import fr.baidem.tiroir.service.converter.DrawerConverter;
 import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
 import fr.baidem.tiroir.service.dto.drawer.DrawerDTO;
 
@@ -19,14 +20,17 @@ public class DrawerService {
 	@Autowired
 	private DrawerRepository drawerRepository;
 	
+	@Autowired
+	private DrawerConverter drawerConverter;
+	
 	@Transactional
 	public List<Drawer> findAll() {
 		return drawerRepository.findAll();
 	}
 	
 	@Transactional
-	public List<Drawer> findById(String id) {
-		return drawerRepository.findById(id);
+	public DrawerDTO findById(Long id) {
+		return drawerConverter.convertTo(this.drawerRepository.getById(id));
 	}
 	
 	@Transactional
