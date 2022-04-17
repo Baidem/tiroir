@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.repository.SockRepository;
 import fr.baidem.tiroir.service.dto.sock.CreateSockDTO;
@@ -27,8 +28,8 @@ public class SockService {
 	}
 	
 	@Transactional
-	public List<Sock> findById(String id) {
-		return sockRepository.findById(id);
+	public Sock findById(Long id) {
+		return this.sockRepository.getById(id);
 	}
 	
 	@Transactional
@@ -54,6 +55,11 @@ public class SockService {
 	@Transactional
 	public List<Sock> findBySeason(String season) {
 		return sockRepository.findBySeason(season);
+	}
+	
+	@Transactional
+	public List<Sock> findByDrawer(Drawer drawer) {
+		return sockRepository.findByDrawer(drawer);
 	}
 	
 	@Transactional

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.entity.Sock;
 
 public interface SockRepository extends JpaRepository<Sock, Long>{
@@ -19,4 +20,7 @@ public interface SockRepository extends JpaRepository<Sock, Long>{
 	List<Sock> findByStyle(String style);
 
 	List<Sock> findBySeason(String season);
+	
+	List<Sock> findByDrawer(Drawer drawer);
+
 }

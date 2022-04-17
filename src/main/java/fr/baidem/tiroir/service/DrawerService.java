@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.repository.DrawerRepository;
 import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
@@ -19,14 +18,22 @@ public class DrawerService {
 	@Autowired
 	private DrawerRepository drawerRepository;
 	
+	
 	@Transactional
 	public List<Drawer> findAll() {
 		return drawerRepository.findAll();
 	}
 	
 	@Transactional
-	public List<Drawer> findById(String id) {
-		return drawerRepository.findById(id);
+	public Drawer findById(Long id) {
+		Drawer findedDrawer = null;
+		List<Drawer> allDrawers = drawerRepository.findAll();
+		for (Drawer drawer : allDrawers) {
+			if (drawer.getId() == id) {
+				findedDrawer = drawer;
+			}
+		}
+		return findedDrawer;
 	}
 	
 	@Transactional
@@ -50,4 +57,6 @@ public class DrawerService {
 
         return dto;
 	}
+	
+
 }
