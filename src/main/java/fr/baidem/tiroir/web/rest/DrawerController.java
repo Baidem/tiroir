@@ -30,10 +30,13 @@ public class DrawerController {
 	}
 	
 	@GetMapping("{id}")
-	public Drawer getDrawerById(@PathVariable String id) {
-		Drawer drawer = (Drawer) drawerService.findById(id);
+	public Drawer getDrawerById(@PathVariable Long id) {
+		Drawer drawer = drawerService.findById(id);
 		return drawer;
+		
+		
 	}
 	
+		
 	
 }

@@ -7,7 +7,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 import fr.baidem.tiroir.entity.Drawer;
-import fr.baidem.tiroir.service.DTOConverter;
 import fr.baidem.tiroir.service.dto.drawer.DrawerDTO;
 
 @Component
@@ -31,7 +30,6 @@ public class DrawerConverter implements DTOConverter<Drawer, DrawerDTO> {
 		}
 		
 		return dtos;
-		
 	}
 	
 

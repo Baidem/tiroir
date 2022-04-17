@@ -7,10 +7,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.events.Event.ID;
 
 import fr.baidem.tiroir.entity.Drawer;
 import fr.baidem.tiroir.repository.DrawerRepository;
-import fr.baidem.tiroir.service.converter.DrawerConverter;
 import fr.baidem.tiroir.service.dto.drawer.CreateDrawerDTO;
 import fr.baidem.tiroir.service.dto.drawer.DrawerDTO;
 
@@ -20,8 +20,6 @@ public class DrawerService {
 	@Autowired
 	private DrawerRepository drawerRepository;
 	
-	@Autowired
-	private DrawerConverter drawerConverter;
 	
 	@Transactional
 	public List<Drawer> findAll() {
@@ -29,8 +27,15 @@ public class DrawerService {
 	}
 	
 	@Transactional
-	public DrawerDTO findById(Long id) {
-		return drawerConverter.convertTo(this.drawerRepository.getById(id));
+	public Drawer findById(Long id) {
+		Drawer findedDrawer = null;
+		List<Drawer> allDrawers = drawerRepository.findAll();
+		for (Drawer drawer : allDrawers) {
+			if (drawer.getId() == id) {
+				findedDrawer = drawer;
+			}
+		}
+		return findedDrawer;
 	}
 	
 	@Transactional
@@ -54,4 +59,6 @@ public class DrawerService {
 
         return dto;
 	}
+	
+
 }

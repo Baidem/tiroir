@@ -1,10 +1,14 @@
 package fr.baidem.tiroir.web.mvc;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import fr.baidem.tiroir.entity.Drawer;
+import fr.baidem.tiroir.entity.Sock;
 import fr.baidem.tiroir.service.DrawerService;
 import fr.baidem.tiroir.service.SockService;
 
@@ -34,12 +38,14 @@ public class PublicController {
 	@GetMapping("/drawer-content/{id}")
 	//public ModelAndView drawerContent( ) {
 		//
-	public ModelAndView showDrawer(@PathVariable Long id) {
+	public ModelAndView drawerContent(@PathVariable Long id) {
 		ModelAndView mAV = new ModelAndView("drawers/drawer-content");
+		Drawer drawer = drawerService.findById(id);
+		List<Sock> socks = sockService.findByDrawer(drawer);
+				
+		mAV.addObject("socks", socks);
 
-		mAV.addObject("drawer", drawerService.findById(id));
-
-		return mAV;
+        return mAV;
 		
 		
 		//
