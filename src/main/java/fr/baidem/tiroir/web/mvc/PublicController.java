@@ -36,8 +36,6 @@ public class PublicController {
 	}
 	
 	@GetMapping("/drawer-content/{id}")
-	//public ModelAndView drawerContent( ) {
-		//
 	public ModelAndView drawerContent(@PathVariable Long id) {
 		ModelAndView mAV = new ModelAndView("drawers/drawer-content");
 		Drawer drawer = drawerService.findById(id);
@@ -46,10 +44,6 @@ public class PublicController {
 		mAV.addObject("socks", socks);
 
         return mAV;
-		
-		
-		//
-		//return new ModelAndView("drawers/drawer-content");
 	}
 	
 	@GetMapping("/create-drawer")
